@@ -1,9 +1,10 @@
-import React from 'react';
-
 export default function Header() {
   return (
-    <div>
-        
-    </div>
+    <nav className="navbar navbar-expand-lg bg-body-tertiary">
+        <div className="container-fluid">
+            <a href="" className="navbar-brand">Navbar</a>
+            <button className='btn btn-outline-primary'>New Game</button>
+        </div>
+    </nav>
   )
 }
