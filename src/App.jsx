@@ -1,5 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Header';
+import Controller from './components/Controller';
 
 function App() {
   const [game, setGame] = useState({
@@ -21,6 +22,7 @@ function App() {
   return (
     <div>
       <Header />
+      <Controller />
       <h1>Hello</h1>
     </div>
     
