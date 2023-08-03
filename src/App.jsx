@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import Header from './components/Header';
-import Controller from './components/Controller';
+import SetUpForm from './components/SetUpForm';
+import Players from './components/Players';
 
 function App() {
   const [game, setGame] = useState({
@@ -19,10 +20,15 @@ function App() {
     ]
   });
 
+  const addPlayers = () => {
+
+  }
+
   return (
     <div>
       <Header />
-      <Controller />
+      <SetUpForm />
+      <Players />
       <h1>Hello</h1>
     </div>
     
