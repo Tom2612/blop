@@ -28,7 +28,7 @@ function App() {
     <div>
       <Header />
       <SetUpForm />
-      <Players />
+      {/* <Players /> */}
       <h1>Hello</h1>
     </div>
     

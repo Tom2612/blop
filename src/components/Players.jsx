@@ -13,15 +13,21 @@ export default function Players() {
         setName('');
     }
 
+    const handleRemovePlayer = (e) => {
+        console.log(e.target.textContent)
+        setPlayers(prev  => prev.filter(name => name !== e.target.textContent));
+        console.log(players)
+    }
+
     return (
         <div>
-            <label htmlFor='player-name'>Player names:</label>
+            <label htmlFor='player-name'>Add Player:</label>
             <input type='text' name='player-name' value={name} onChange={handleChange} />
             <button onClick={handleSubmit}>Add player</button>
-            <h3>Display players:</h3>
+            <h3>Player names:</h3>
             <ul>
                 {players && players.map((player, i) => {
-                    return <li key={'player' + i}>{ player }</li>
+                    return <li key={'player' + i} onClick={handleRemovePlayer}>{ player }</li>
                 })}
             </ul>
         </div>
