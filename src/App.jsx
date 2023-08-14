@@ -25,7 +25,7 @@ function App() {
   const startGame = (players, cardCount) => {
     setGame(
       {
-        cards: cardCount,
+        cards: new Number(cardCount),
         rounds: (cardCount * 2) -1,
         currentRound: 1,
         players: [
@@ -40,6 +40,7 @@ function App() {
     );
     setGameStart(prev => !prev);
   }
+
 
   return (
     <div>
