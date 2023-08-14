@@ -20,14 +20,14 @@ function App() {
     ]
   });
 
-  const addPlayers = () => {
-
+  const startGame = (e) => {
+    
   }
 
   return (
     <div>
       <Header />
-      <SetUpForm />
+      <SetUpForm startGame={startGame}/>
       {/* <Players /> */}
       <h1>Hello</h1>
     </div>
