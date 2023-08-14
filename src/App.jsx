@@ -20,8 +20,8 @@ function App() {
     ]
   });
 
-  const startGame = (e) => {
-    
+  const startGame = (players, cardCount) => {
+    console.log(players, cardCount);
   }
 
   return (
