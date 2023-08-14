@@ -1,7 +1,6 @@
 import { useState } from 'react';
 import Header from './components/Header';
 import SetUpForm from './components/SetUpForm';
-import Players from './components/Players';
 
 function App() {
   const [game, setGame] = useState({
@@ -28,8 +27,6 @@ function App() {
     <div>
       <Header />
       <SetUpForm startGame={startGame}/>
-      {/* <Players /> */}
-      <h1>Hello</h1>
     </div>
     
   )
