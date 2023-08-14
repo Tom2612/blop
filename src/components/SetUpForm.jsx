@@ -7,7 +7,7 @@ export default function SetUpForm() {
     const [name, setName] = useState('');
     const [cardStart, setCardStart] = useState(false);
     const [maxCards, setMaxCards] = useState(52);
-    const [cardCount, setCardCount] = useState(null);
+    const [cardCount, setCardCount] = useState(0);
 
     const handleChangeName = (e) => {
       setName(e.target.value);
@@ -29,8 +29,8 @@ export default function SetUpForm() {
       setMaxCards(findMaxCards(players.length));
     }
 
-    const handleCardChange = () => {
-
+    const handleCardChange = (e) => {
+      setCardCount(e.target.value)
     }
 
     const findMaxCards = (players) => {
@@ -44,26 +44,22 @@ export default function SetUpForm() {
     return (
       <div className='card'>
           <h2>Game set up:</h2>
-          <Players 
+          {!cardStart && <Players 
             handleChangeName={handleChangeName}
             handleSubmitName={handleSubmitName}
             handleRemoveName={handleRemoveName} 
             name={name} 
-          />
+          />}
           <h3>Player names:</h3>
           <ul>
             {players && players.map((player, i) => {
                 return <li key={'player' + i} onClick={handleRemoveName}>{ player }</li>
             })}
           </ul>
-          <button onClick={handleSubmitPlayers}>Submit Players</button>
+          <button onClick={handleSubmitPlayers}>{cardStart ? 'Edit Players' : 'Submit Players'}</button>
           {cardStart && <Cards handleCardChange={handleCardChange} maxCards={maxCards} />}
-          {/* <label>Card count:</label>
-          <select name='cardCount'>
-            {[...Array(maxCards)].map((e, i) => <option value={i + 1} key={i}>{i + 1}</option>)}
-          </select>
-          <h1>MaxCardCount: {maxCards}</h1> */}
-          <input type='number'></input>
+          <h2>Chosen Card Count = {cardCount}</h2>
+
           <button className='btn btn-success'>Start Game</button>
       </div>
     )
